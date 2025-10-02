@@ -34,7 +34,7 @@ export default function Navbar() {
             >
               Websites
             </Link>
-            {session ? (
+            {session && status === "authenticated" ? (
               <div className="flex items-center space-x-4">
                 <Link
                   href="/dashboard"
@@ -63,12 +63,20 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <button
-                onClick={() => signIn()}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Sign In
-              </button>
+              <div className="flex items-center space-x-3">
+                <button
+                  onClick={() => signIn()}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+                >
+                  Sign In
+                </button>
+                <Link
+                  href="/auth/register"
+                  className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+                >
+                  Register
+                </Link>
+              </div>
             )}
           </div>
 
@@ -101,7 +109,7 @@ export default function Navbar() {
               >
                 Websites
               </Link>
-              {session ? (
+              {session && status === "authenticated" ? (
                 <>
                   <Link
                     href="/dashboard"
@@ -134,15 +142,24 @@ export default function Navbar() {
                   </button>
                 </>
               ) : (
-                <button
-                  onClick={() => {
-                    signIn()
-                    setIsMenuOpen(false)
-                  }}
-                  className="bg-blue-600 hover:bg-blue-700 text-white w-full px-4 py-2 rounded-md text-base font-medium"
-                >
-                  Sign In
-                </button>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => {
+                      signIn()
+                      setIsMenuOpen(false)
+                    }}
+                    className="bg-blue-600 hover:bg-blue-700 text-white w-full px-4 py-2 rounded-md text-base font-medium"
+                  >
+                    Sign In
+                  </button>
+                  <Link
+                    href="/auth/register"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="border border-blue-600 text-blue-600 hover:bg-blue-50 w-full px-4 py-2 rounded-md text-base font-medium block text-center"
+                  >
+                    Register
+                  </Link>
+                </div>
               )}
             </div>
           </div>
