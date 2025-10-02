@@ -1,6 +1,6 @@
-# Record Repo - Full-Stack Application
+# Data Website Domain DNS - Website Management Platform
 
-A comprehensive full-stack application built with modern technologies, featuring authentication, real-time communication, and scalable architecture.
+A comprehensive website management platform built with modern technologies, featuring domain management, DNS tracking, and website analytics with authentication and real-time communication.
 
 ## 🚀 Tech Stack
 
@@ -38,8 +38,8 @@ A comprehensive full-stack application built with modern technologies, featuring
 ## 📁 Project Structure
 
 ```
-record-repo/
-├── backend/                 # NestJS API
+data-website-domin-dns/
+├── backend/                 # NestJS API (Port 5050)
 │   ├── src/
 │   │   ├── auth/           # Authentication module
 │   │   ├── prisma/         # Database service
@@ -49,7 +49,7 @@ record-repo/
 │   │   └── schema.prisma   # Database schema
 │   ├── Dockerfile
 │   └── ecosystem.config.js # PM2 configuration
-├── frontend/               # Next.js application
+├── frontend/               # Next.js application (Port 4040)
 │   ├── src/
 │   │   ├── app/            # App Router pages
 │   │   ├── stores/         # Zustand stores
